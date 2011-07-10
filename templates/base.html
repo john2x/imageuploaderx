@@ -44,7 +44,7 @@
         </div>
         <div class="grid_12 alpha">
             <img src="/{{uuid}}.{{ext}}" border="0"/><br/>
-            <span style="font-size: 10px;">Uploaded: {{uploaded_on}} | Views: {{views}} | Bandwidth Used: {{bandwidth}}</span>
+            <span style="font-size: 10px;">Uploaded: {{uploaded_on|timesince}} ago | Views: {{views}} | Bandwidth Used: {{bandwidth}}</span>
         </div>
     {% endif %}
 

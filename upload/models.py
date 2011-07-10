@@ -10,7 +10,7 @@ class Uploads(models.Model):
     ext           = models.CharField(max_length=50, verbose_name="Extension")
     path          = models.CharField(max_length=250, verbose_name='Path')
     ip            = models.IPAddressField(verbose_name='IP Address')
-    uploaded_on   = models.DateTimeField(auto_now=True, auto_now_add=True,\
+    uploaded_on   = models.DateTimeField(auto_now_add=True,\
                                         verbose_name='Uploaded On')
     views         = models.IntegerField(verbose_name='Views')
     size          = models.FloatField(verbose_name='Size')

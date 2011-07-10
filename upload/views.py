@@ -48,13 +48,12 @@ def upload(request, uuid=None):
     
     if uuid:
         image = Uploads.objects.get(uuid=uuid)
-        viewdate = pretty_date(int(time.mktime(time.strptime(str(image.uploaded_on), '%Y-%m-%d %H:%M:%S'))))
         
         data = RequestContext(request, {
             'uuid': image.uuid,
             'ext': str(image.ext).lower(),
             'path': image.path,
-            'uploaded_on': viewdate,
+            'uploaded_on': image.uploaded_on,
             'views': image.views,
             'url': settings.SITE_URL,
             'cookies': request.COOKIES,
@@ -392,3 +391,4 @@ class ImageSequence:
         except EOFError:
             #raise IndexError # end of sequence
             pass
+
